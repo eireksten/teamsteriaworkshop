@@ -1,5 +1,7 @@
 extends layout
 
 block content
+  div.container(ng-controller="teamSteriaController", ng-init="init(#{JSON.stringify(users)})")
     h1= title
-    p Velkommen til #{title}
+    ol
+      li(ng-repeat="user in users") {{user.name}} har {{user.sum}} poeng!
