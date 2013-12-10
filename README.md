@@ -1,7 +1,7 @@
 MEAN Workshop - Team Steria
 ==================
 
- ## Velkommen til workshop!
+## Velkommen til workshop!
 
  For å begynne:
  - clone repo til en lokal mappe :)
