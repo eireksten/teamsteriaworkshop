@@ -16,7 +16,20 @@ MEAN Workshop - Team Steria
 
 ## Litt drahjelp for n00bs:
 
-- "html"-like kode (type jade) skriver du i prosjektmappe/views
 - cygwin støtter ikke node, så ingen vits i å bruke cygwin.
 - det kan være lurt å installere underscore :)
+- bower install <funnyfrontendmodule> legger til <funnyfrontendmodule> i mappen definert i .bowerrc
+  - bower install bootstrap-css
+  - bower install bootstrap-javascript
+  - bower install underscore
+  - bower install angular
+  - bower install angular-bootstrap
 
+### Hva finnes i denne koden fra før
+
+- models: mongoDB-skjemaer
+- public: Filer som er aksesserbare over web (f.eks. bilder, frontendkode, css)
+- routes: moduler for å håndtere http-requester
+- views: jade-filer (eller andre templates). Brukes til å generere html.
+- app.js: Oppstartsscriptet for appen. Kobling mellom url og http-request ligger her.
+- package.json: dependency management for npm
