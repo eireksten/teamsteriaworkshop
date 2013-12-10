@@ -4,6 +4,7 @@ MEAN Workshop - Team Steria
 ## Velkommen til workshop!
 
  For å begynne:
+ - Installer Git!
  - clone repo til en lokal mappe :)
  - kjør npm install på mappen
  - kjør "mongod" for å starte mongodb
