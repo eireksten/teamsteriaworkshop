@@ -72,3 +72,5 @@ aktivitetsfeed, expand/collapse av aktivitetslistene, sletting av brukere, rosa 
   - bower install underscore
   - bower install angular
   - bower install angular-bootstrap
+
+- Det som ligger i mappen ```public``` blir tilgjengelig over web. Dersom du vil legge til bilder ol. kan du legge disse inn her.
