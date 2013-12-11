@@ -25,8 +25,8 @@ Prerequisites
  6. Åpne "http://localhost:3000/" og se at applikasjonen er i gang! Du skal ha fått opp en liste med tre brukere.
 
 2. Fjern defaultbrukerne fra koden.
- 1. Nå når brukerne er lagt inn i databasen din, må du fjerne dem fra koden.
- 2. Åpne ```app.js``` og fjern linjene som begynner med ```new Users```
+ 1. Nå når brukerne er lagt inn i databasen din, kan du fjerne dem fra koden. Hvis ikke, vil de oppdateres til 'default' tilstand ved hver oppstart.
+ 2. Åpne ```app.js``` og fjern linjene som begynner med ```Users.update```
 
 3. Prøv å sortere listen med brukere
  1. Ta en kikk på filene ```models/user.js```, ```public/js/teamSteriaController.js```, og ```views/index.jade```. Førstnevnte er definisjonen
