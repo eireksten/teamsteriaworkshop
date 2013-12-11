@@ -66,11 +66,11 @@ aktivitetsfeed, expand/collapse av aktivitetslistene, sletting av brukere, rosa 
 
 - Ikke bruk Cygwin! Cygwin fungerer dårlig med node, og Git Bash er minst like bra i utgangspunktet.
 
-- bower install <funnyfrontendmodule> legger til <funnyfrontendmodule> i mappen definert i .bowerrc
-  - bower install bootstrap-css
-  - bower install bootstrap-javascript
-  - bower install underscore
-  - bower install angular
-  - bower install angular-bootstrap
+- ```bower install funnyfrontendmodule``` legger til funnyfrontendmodule i mappen definert i .bowerrc
+  - ```bower install bootstrap-css```
+  - ```bower install bootstrap-javascript```
+  - ```bower install underscore```
+  - ```bower install angular```
+  - ```bower install angular-bootstrap```
 
 - Det som ligger i mappen ```public``` blir tilgjengelig over web. Dersom du vil legge til bilder ol. kan du legge disse inn her.
