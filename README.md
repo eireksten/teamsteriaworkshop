@@ -31,7 +31,7 @@ Prerequisites
 3. Prøv å sortere listen med brukere
  1. Ta en kikk på filene ```models/user.js```, ```public/js/teamSteriaController.js```, og ```views/index.jade```. Førstnevnte er definisjonen
  av en bruker (mongoDB), nummer to er en fil for frontendkode, mens den siste er templaten som brukes for å generere hovedsiden i appen.
- 2. Listen er først tilgjengelig i controllerens ```init``-metode. Se hva som skjer hvis du sorterer listen herfra. users er en array med User-objekter,
+ 2. Listen er først tilgjengelig i controllerens ```init```-metode. Se hva som skjer hvis du sorterer listen herfra. ```users``` er en array med User-objekter,
  3. Slike vanlige problemer har angularJS standard måter å løse på. Se om du klarer å erstatte sorteringen fra
  forrige punkt med å la ```ng-repeat``` alltid håndtere listen i sortert rekkefølge. Får du til dette, vil enhver endring
  i users-listen reflekteres på siden umiddelbart.
@@ -39,15 +39,26 @@ Prerequisites
 4. Lag et skjema for å legge inn ny bruker
  1. Start med å skrive et enkelt html-skjema i jade. Du trenger input-felt for navnet på brukeren og en submit-knapp.
  2. Angular har flere direktives for å hjelpe deg med forms. ```ng-submit``` kan legges på formen for å trigge en funksjon når den submittes.
- Lag en submitfunksjon på $scope som trigges når man trykker på submit-knappen. Kall alert eller noe for å verifisere at den blir kalt.
- 3. ```ng-model``` kan brukes til å knytte et inputfelt opp mot et objekt som er lagt på $scope. Opprett en ny variabel på
- $scope som holder på verdien i input-feltet for navnet.
+ Lag en submitfunksjon på ```$scope``` som trigges når man trykker på submit-knappen. Kall alert eller noe for å verifisere at den blir kalt.
+ 3. ```ng-model``` kan brukes til å knytte et inputfelt opp mot et objekt som er lagt på ```$scope```. Opprett en ny variabel på
+ ```$scope``` som holder på verdien i input-feltet for navnet.
  4. Oppdater submit-funksjonen slik at den blanker ut navnefeltet når man submitter.
  5. Oppdater submit-funksjonen slik at den legger en ny bruker inn i users-listen når man submitter.
 
 5. Persister den nye brukeren på serveren
+ 1. I ```app.js``` er det definert to routes for å henholdsvis opprette og oppdatere brukere. Disse er definert på linjene som starter med henholdsvis
+ ```app.post``` og ```app.put```. Selve håndteringen av disse finner du i ```routes/user.js```. Ta en kikk på disse.
+ 2. I tillegg til ```$scope```, får en angular-controller inn servicen ```$http``` som parameter. Denne kan brukes til blant annet å sende kall til server.
+ Legg til et POST-kall til ```/user.json```, slik at brukeren opprettes i databasen (og dermed ikke forsvinner ved refresh). Dokumentasjon for $http finner du på
+ http://docs.angularjs.org/api/ng.$http
 
-6. Vis en liste med aktiviteter for hver bruker
+6. Vis en liste med aktiviteter for hver bruker.
+
+7. Lag funksjonalitet for å legge inn en ny aktivitet på en bruker. Pass på at score for brukeren må oppdateres tilsvarende.
+
+
+Nå er du godt i gang med å lage en flott side for Team Steria! Videre kan du forsøke å style denne og legge til ny funksjonalitet du synes passer seg å ha her. Eksempler kan være
+aktivitetsfeed, expand/collapse av aktivitetslistene, sletting av brukere, rosa bakgrunn, animasjoner, eller hva du måtte klare å komme på. Enjoy!
 
 ***
 

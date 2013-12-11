@@ -1,6 +1,6 @@
 var _ = require('underscore');
 
-// Routerfunksjon som legger til en bruker og returnerer denne.
+// Routerfunksjon som legger til en bruker i databasen og returnerer denne.
 exports.addUser = function(Users){
     return function(req, res){
 
@@ -17,6 +17,7 @@ exports.addUser = function(Users){
 };
 
 // Routerfunksjon som oppdaterer en gitt bruker.
+// Denne sender et kall til databasen, og returnerer den oppdaterte brukeren som json til serveren
 exports.updateUser = function(Users){
     return function(req, res){
         var user = req.body;
