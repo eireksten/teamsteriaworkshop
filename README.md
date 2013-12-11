@@ -16,38 +16,40 @@ Prerequisites
  5. Installer bower (npm install -g bower)
 
 1. Get up and running!
- 1. Klone dette repositoryet til en lokal mappe (git clone https://github.com/eireksten/teamsteriaworkshop.git)
- 2. Installere server side dependencies (fra prosjektmappen, kjør 'npm install')
- 3. Start opp MongoDB lokalt (kjør mongodb/bin/mongod)
- 4. kjør "node app.js" (i mappen) for å starte applikasjonen
- 5. Åpne "http://localhost:3000/" og se at applikasjonen er i gang! Du skal ha fått opp en liste med tre brukere.
+ 1. Klone dette repositoryet til en lokal mappe (```git clone https://github.com/eireksten/teamsteriaworkshop.git```)
+ 2. Installere server side dependencies (fra prosjektmappen, kjør ```npm install```)
+ 3. Start opp MongoDB lokalt (kjør ```mongodb/bin/mongod```)
+ 4. Legg inn angularJS i prosjektet vha bower. Kjør ```bower install angular```, og den vil legge seg utfra hvor det er definert i ```.bowerrc```.
+ Dersom du vil legge den et annet sted, endrer du ```.bowerrc```, og også i ```views/layout.jade```, hvor den hentes inn i koden.
+ 5. kjør ```node app.js``` (i mappen) for å starte applikasjonen
+ 6. Åpne "http://localhost:3000/" og se at applikasjonen er i gang! Du skal ha fått opp en liste med tre brukere.
 
 2. Fjern defaultbrukerne fra koden.
  1. Nå når brukerne er lagt inn i databasen din, må du fjerne dem fra koden.
- 2. Åpne 'app.js' og fjern linjene som begynner med 'new Users'
+ 2. Åpne ```app.js``` og fjern linjene som begynner med ```new Users```
 
 3. Prøv å sortere listen med brukere
- 1. Ta en kikk på filene models/user.js, public/js/teamSteriaController, og views/index.jade. Førstnevnte er definisjonen
+ 1. Ta en kikk på filene ```models/user.js```, ```public/js/teamSteriaController.js```, og ```views/index.jade```. Førstnevnte er definisjonen
  av en bruker (mongoDB), nummer to er en fil for frontendkode, mens den siste er templaten som brukes for å generere hovedsiden i appen.
- 2. Listen er først tilgjengelig i controllerens init-metode. Se hva som skjer hvis du sorterer listen herfra. users er en array med User-objekter,
+ 2. Listen er først tilgjengelig i controllerens ```init``-metode. Se hva som skjer hvis du sorterer listen herfra. users er en array med User-objekter,
  3. Slike vanlige problemer har angularJS standard måter å løse på. Se om du klarer å erstatte sorteringen fra
- forrige punkt med å la ng-repeat alltid håndtere listen i sortert rekkefølge. Får du til dette, vil enhver endring
+ forrige punkt med å la ```ng-repeat``` alltid håndtere listen i sortert rekkefølge. Får du til dette, vil enhver endring
  i users-listen reflekteres på siden umiddelbart.
 
 4. Lag et skjema for å legge inn ny bruker
+ 1. Start med å skrive et enkelt html-skjema i jade. Du trenger input-felt for navnet på brukeren og en submit-knapp.
+ 2. Angular har flere direktives for å hjelpe deg med forms. ```ng-submit``` kan legges på formen for å trigge en funksjon når den submittes.
+ Lag en submitfunksjon på $scope som trigges når man trykker på submit-knappen. Kall alert eller noe for å verifisere at den blir kalt.
+ 3. ```ng-model``` kan brukes til å knytte et inputfelt opp mot et objekt som er lagt på $scope. Opprett en ny variabel på
+ $scope som holder på verdien i input-feltet for navnet.
+ 4. Oppdater submit-funksjonen slik at den blanker ut navnefeltet når man submitter.
+ 5. Oppdater submit-funksjonen slik at den legger en ny bruker inn i users-listen når man submitter.
 
-5. Vis en liste med aktiviteter for hver bruker
+5. Persister den nye brukeren på serveren
+
+6. Vis en liste med aktiviteter for hver bruker
 
 ***
-
-### Hvilke filer må jeg endre i?
-
-- models: mongoDB-skjemaer
-- public: Filer som er aksesserbare over web (f.eks. bilder, frontendkode, css)
-- routes: moduler for å håndtere http-requester
-- views: jade-filer (eller andre templates). Brukes til å generere html.
-- app.js: Oppstartsscriptet for appen. Kobling mellom url og http-request ligger her.
-- package.json: dependency management for npm
 
 ### Tips og Triks
 
