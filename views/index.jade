@@ -1,7 +1,20 @@
 extends layout
 
+// Dokumentasjon for jade finner du paa http://jade-lang.com/reference/
+
+block head
+    script(type='text/javascript', src='/js/teamSteriaController.js')
+
 block content
-  div.container(ng-controller="teamSteriaController", ng-init="init(#{JSON.stringify(users)})")
+  // Denne div'en definerer en komponent i angular, styrt av teamSteriaController
+  // Ved oppstart av siden, vil init paa teamSteriaController bli kjoert med en array av users som input
+  div.container(ng-controller="teamSteriaController", ng-init="init(#{JSON.stringify(usersBackend)})")
     h1= title
     ol
-      li(ng-repeat="user in users") {{user.name}} har {{user.sum}} poeng!
+      // ng-repeat er, som ng-controller og ng-init, et 'angular-direktiv'.
+      // Disse direktivene er det angular bruker for aa utvide html med ny funksjonalitet
+      // I dette tilfellet vil angular soerge for at det alltid er en li for hvert element paa users-listen
+      // (definert i teamSteriaController)
+      li(ng-repeat="user in users")
+        // {{user.name}} og {{user.sum}} er kortform for aa lage tekst som angular vil holde oppdatert ift. user
+        | {{user.name}} har {{user.sum}} poeng!

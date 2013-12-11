@@ -29,10 +29,15 @@ if ('development' == app.get('env')) {
 }
 
 // Creating connection and reference to the DB
-var db = Mongoose.createConnection('localhost', 'mean_skeleton');
+var db = Mongoose.createConnection('localhost', 'team_steria');
 var UserSchema = require('./models/user').UserSchema;
-var Users = db.model('models', UserSchema);
+var Users = db.model('users', UserSchema);
 
+new Users({ name: 'Eirik Reksten', sum: 3 }).save();
+new Users({ name: 'Silje Garshol Løvaas', sum: 19 }).save();
+new Users({ name: 'Magnus Westergaard', sum: 8 }).save();
+
+// Defining routes
 app.get('/', routes.index(Users));
 app.post('/user.json', user.addUser(Users));
 app.put('/user.json', user.updateUser(Users));
