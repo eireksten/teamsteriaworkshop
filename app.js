@@ -33,9 +33,9 @@ var db = Mongoose.createConnection('localhost', 'team_steria');
 var UserSchema = require('./models/user').UserSchema;
 var Users = db.model('users', UserSchema);
 
-new Users({ name: 'Eirik Reksten', sum: 3 }).save();
+new Users({ name: 'Eirik Reksten', sum: 8 }).save();
 new Users({ name: 'Silje Garshol Løvaas', sum: 19 }).save();
-new Users({ name: 'Magnus Westergaard', sum: 8 }).save();
+new Users({ name: 'Magnus Westergaard', sum: 3 }).save();
 
 // Defining routes
 app.get('/', routes.index(Users));
